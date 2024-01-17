@@ -31,7 +31,10 @@ if (!!core.getInput('bearerToken')) {
 const instanceConfig = {
   baseURL: core.getInput('url', { required: true }),
   timeout: parseInt(core.getInput('timeout') || 5000, 10),
-  headers: { ...headers, ...customHeaders }
+  headers: { ...headers, ...customHeaders },
+  httpsAgent: new https.Agent({ 
+    rejectUnauthorized: false
+  })
 }
 
 core.debug('Setting rejectUnauthorized: false')
