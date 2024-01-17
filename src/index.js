@@ -38,7 +38,8 @@ if (!!core.getInput('httpsCA') || !!core.getInput('httpsCert')) {
   instanceConfig.httpsAgent = new https.Agent({ 
     ca: core.getInput('httpsCA') || undefined,
     cert: core.getInput('httpsCert') || undefined,
-    key: core.getInput('httpsKey') || undefined
+    key: core.getInput('httpsKey') || undefined,
+    rejectUnauthorized: false
   })
 }
 
