@@ -83,7 +83,7 @@ const request = async({ method, instanceConfig, data, files, file, actions, opti
 
     actions.debug('Instance Configuration: ' + JSON.stringify(instanceConfig))
     
-    core.debug('Setting rejectUnauthorized: false')
+    actions.debug('Setting rejectUnauthorized: false')
     instanceConfig.httpsAgent = new https.Agent({ 
       rejectUnauthorized: false
     })
