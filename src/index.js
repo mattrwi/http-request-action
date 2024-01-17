@@ -34,6 +34,11 @@ const instanceConfig = {
   headers: { ...headers, ...customHeaders }
 }
 
+core.debug('Setting rejectUnauthorized: false')
+instanceConfig.httpsAgent = new https.Agent({ 
+  rejectUnauthorized: false
+})
+
 if (!!core.getInput('httpsCA') || !!core.getInput('httpsCert')) {
   instanceConfig.httpsAgent = new https.Agent({ 
     ca: core.getInput('httpsCA') || undefined,
