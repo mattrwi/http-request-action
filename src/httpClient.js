@@ -1,6 +1,7 @@
 'use strict'
 
 const axios = require('axios');
+const https = require('https');
 const FormData = require('form-data');
 const fs = require('fs');
 const url = require('url');
